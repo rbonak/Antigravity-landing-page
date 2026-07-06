@@ -289,6 +289,48 @@ p {
     color: inherit;
 }
 
+/* Mobile Menu Drawer */
+.mobile-menu-drawer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(18, 20, 16, 0.95);
+    backdrop-filter: blur(20px);
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-6);
+    transform: translateY(-100%);
+    transition: transform 0.5s var(--ease-out-expo);
+    pointer-events: none;
+}
+
+.mobile-menu-drawer.open {
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.mobile-nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-5);
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.mobile-nav-item {
+    color: var(--color-text-inverse);
+    transition: color 0.3s ease;
+}
+.mobile-nav-item:hover {
+    color: var(--accent);
+}
+
 /* ==========================================================================
    Hero Section
    ========================================================================== */
@@ -858,4 +900,26 @@ section {
     .footer { padding: var(--space-8) var(--space-4); }
     .footer-top { flex-direction: column; gap: var(--space-6); }
     .subscribe-form { width: 100%; max-width: 100%; }
+}
+
+/* ==========================================================================
+   Accessibility & Reduced Motion
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    .marquee-content {
+        animation: none !important;
+    }
+    .reveal, .animate-fade-in-up, .animate-fade-in-down {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+    .magnetic {
+        transform: none !important;
+    }
 }
