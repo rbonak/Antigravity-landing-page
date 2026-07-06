@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VENORA | Natural Skincare</title>
     <meta name="description" content="Discover our curated selection of skincare products designed to highlight your unique beauty with natural ingredients.">
+    <meta property="og:title" content="VENORA | Natural Skincare">
+    <meta property="og:description" content="Discover our curated selection of skincare products designed to highlight your unique beauty with natural ingredients.">
+    <meta property="og:image" content="assets/hero_bg_1782841487186.png">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="image" href="assets/hero_bg_1782841487186.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -14,23 +22,34 @@
 
     <!-- Navbar -->
     <nav class="navbar animate-fade-in-down">
-        <a href="#" class="logo" aria-label="Venora Home">VE<span>N</span>ORA</a>
+        <a href="#" class="logo" id="nav-logo" aria-label="Venora Home">VE<span>N</span>ORA</a>
         <ul class="nav-links">
-            <li><a href="#" class="nav-item">HOME</a></li>
-            <li><a href="#" class="nav-item">ABOUT</a></li>
-            <li><a href="#" class="nav-item">PRODUCTS</a></li>
-            <li><a href="#" class="nav-item">CONTACT</a></li>
+            <li><a href="#" class="nav-item" id="nav-home">HOME</a></li>
+            <li><a href="#" class="nav-item" id="nav-about">ABOUT</a></li>
+            <li><a href="#" class="nav-item" id="nav-products">PRODUCTS</a></li>
+            <li><a href="#" class="nav-item" id="nav-contact">CONTACT</a></li>
         </ul>
         <div class="nav-actions">
-            <button class="cart-btn magnetic" aria-label="Open Cart">
+            <button class="cart-btn magnetic" id="cart-toggle-btn" aria-label="Open Cart">
                 <svg class="cart-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
             </button>
-            <a href="#" class="btn-primary magnetic">Book a Call →</a>
-            <button class="mobile-menu-btn" aria-label="Toggle Menu" aria-expanded="false">
+            <a href="#" class="btn-primary magnetic" id="book-call-btn">Book a Call →</a>
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Menu" aria-expanded="false" aria-controls="mobile-menu-drawer">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
             </button>
         </div>
     </nav>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="mobile-menu-drawer" class="mobile-menu-drawer" aria-hidden="true">
+        <ul class="mobile-nav-links">
+            <li><a href="#" class="mobile-nav-item" id="mobile-nav-home">HOME</a></li>
+            <li><a href="#" class="mobile-nav-item" id="mobile-nav-about">ABOUT</a></li>
+            <li><a href="#" class="mobile-nav-item" id="mobile-nav-products">PRODUCTS</a></li>
+            <li><a href="#" class="mobile-nav-item" id="mobile-nav-contact">CONTACT</a></li>
+        </ul>
+        <a href="#" class="btn-primary mobile-cta" id="mobile-book-call-btn">Book a Call →</a>
+    </div>
 
     <!-- Hero Section -->
     <header class="hero" style="background-image: url('assets/hero_bg_1782841487186.png');">
@@ -38,14 +57,14 @@
         <div class="hero-content">
             <h1 class="animate-fade-in-up">Your natural beauty,<br>expressed with care</h1>
             <div class="hero-buttons animate-fade-in-up" style="animation-delay: 0.2s;">
-                <a href="#" class="btn-solid magnetic">Shop now</a>
-                <a href="#" class="btn-glass magnetic">Our collection</a>
+                <a href="#" class="btn-solid magnetic" id="hero-shop-now-btn">Shop now</a>
+                <a href="#" class="btn-glass magnetic" id="hero-collection-btn">Our collection</a>
             </div>
             <div class="trusted-badge animate-fade-in-up" style="animation-delay: 0.4s;">
                 <div class="avatars">
-                    <img src="assets/testi_1_1782841574620.png" alt="Client 1">
-                    <img src="assets/testi_2_1782841583071.png" alt="Client 2">
-                    <img src="assets/testi_3_1782841592124.png" alt="Client 3">
+                    <img src="assets/testi_1_1782841574620.png" alt="Client 1" loading="lazy" decoding="async" width="40" height="40">
+                    <img src="assets/testi_2_1782841583071.png" alt="Client 2" loading="lazy" decoding="async" width="40" height="40">
+                    <img src="assets/testi_3_1782841592124.png" alt="Client 3" loading="lazy" decoding="async" width="40" height="40">
                 </div>
                 <div class="rating">
                     <span aria-label="4.9 out of 5 stars">⭐ (4.9/5)</span>
@@ -66,9 +85,9 @@
             <p>Discover our curated selection of products designed to<br>highlight your unique beauty.</p>
         </div>
         <div class="product-grid">
-            <a href="#" class="product-card reveal" aria-label="View Radiance boost serum">
+            <a href="#" class="product-card reveal" id="product-serum-card" aria-label="View Radiance boost serum">
                 <div class="product-image">
-                    <img src="assets/product_serum_1782841495252.png" alt="Radiance boost serum bottle">
+                    <img src="assets/product_serum_1782841495252.png" alt="Radiance boost serum bottle" loading="lazy" decoding="async" width="300" height="250">
                 </div>
                 <div class="product-info">
                     <span class="category">SERUMS</span>
@@ -78,9 +97,9 @@
                     </div>
                 </div>
             </a>
-            <a href="#" class="product-card reveal" style="transition-delay: 0.1s;" aria-label="View Anti-aging eye cream">
+            <a href="#" class="product-card reveal" id="product-eyecream-card" style="transition-delay: 0.1s;" aria-label="View Anti-aging eye cream">
                 <div class="product-image">
-                    <img src="assets/product_eyecream_1782841503234.png" alt="Anti-aging eye cream bottle">
+                    <img src="assets/product_eyecream_1782841503234.png" alt="Anti-aging eye cream bottle" loading="lazy" decoding="async" width="300" height="250">
                 </div>
                 <div class="product-info">
                     <span class="category">EYE CARE</span>
@@ -90,9 +109,9 @@
                     </div>
                 </div>
             </a>
-            <a href="#" class="product-card reveal" style="transition-delay: 0.2s;" aria-label="View Refreshing gel cleanser">
+            <a href="#" class="product-card reveal" id="product-cleanser-card" style="transition-delay: 0.2s;" aria-label="View Refreshing gel cleanser">
                 <div class="product-image">
-                    <img src="assets/product_cleanser_1782841512287.png" alt="Refreshing gel cleanser bottle">
+                    <img src="assets/product_cleanser_1782841512287.png" alt="Refreshing gel cleanser bottle" loading="lazy" decoding="async" width="300" height="250">
                 </div>
                 <div class="product-info">
                     <span class="category">CLEANSERS</span>
@@ -114,9 +133,9 @@
         <div class="bento-grid">
             <div class="bento-item clients reveal" style="transition-delay: 0.1s;">
                 <div class="clients-display">
-                    <img src="assets/testi_1_1782841574620.png" class="tilt-left" alt="">
-                    <img src="assets/testi_2_1782841583071.png" class="center-avatar" alt="">
-                    <img src="assets/testi_3_1782841592124.png" class="tilt-right" alt="">
+                    <img src="assets/testi_1_1782841574620.png" class="tilt-left" alt="Happy client 1" loading="lazy" decoding="async" width="80" height="80">
+                    <img src="assets/testi_2_1782841583071.png" class="center-avatar" alt="Happy client 2" loading="lazy" decoding="async" width="90" height="90">
+                    <img src="assets/testi_3_1782841592124.png" class="tilt-right" alt="Happy client 3" loading="lazy" decoding="async" width="80" height="80">
                 </div>
                 <div class="clients-text">
                     <div class="stars" aria-label="5 stars">⭐⭐⭐⭐⭐</div>
@@ -141,7 +160,7 @@
                 <div class="bento-overlay"></div>
                 <div class="bento-content split">
                     <h3>Shop easily online or in our stores</h3>
-                    <a href="#" class="link-btn magnetic">View our stores →</a>
+                    <a href="#" class="link-btn magnetic" id="view-stores-btn">View our stores →</a>
                 </div>
             </div>
             <div class="bento-item natural reveal interactable" style="background-image: url('assets/feature_natural_1782841549544.png'); transition-delay: 0.2s;">
@@ -187,7 +206,7 @@
         <div class="testimonial-grid">
             <div class="testimonial-card reveal">
                 <div class="video-container" style="background-image: url('assets/testi_1_1782841574620.png');">
-                    <button class="play-btn magnetic" aria-label="Play video testimonial from Amelia Clarke">▶ Play</button>
+                    <button class="play-btn magnetic" id="play-testimonial-1-btn" aria-label="Play video testimonial from Amelia Clarke">▶ Play</button>
                 </div>
                 <h3>Amelia Clarke</h3>
             </div>
@@ -209,10 +228,10 @@
         <div class="footer-top">
             <div class="footer-cta">
                 <h2>Stay updated with the latest<br>from Venora!</h2>
-                <form class="subscribe-form" aria-label="Newsletter Subscription">
+                <form class="subscribe-form" id="newsletter-form" aria-label="Newsletter Subscription">
                     <label for="email-input" class="sr-only">Email address</label>
                     <input type="email" id="email-input" placeholder="Email address..." required>
-                    <button type="submit" class="magnetic">Subscribe</button>
+                    <button type="submit" class="magnetic" id="subscribe-btn">Subscribe</button>
                 </form>
             </div>
             <div class="footer-links">
@@ -246,9 +265,9 @@
                 <span class="pay-icon" aria-label="Google Pay">G Pay</span>
             </div>
             <div class="socials">
-                <a href="#" class="social-icon magnetic" aria-label="LinkedIn">IN</a>
-                <a href="#" class="social-icon magnetic" aria-label="Facebook">FB</a>
-                <a href="#" class="social-icon magnetic" aria-label="Instagram">IG</a>
+                <a href="#" class="social-icon magnetic" id="social-linkedin" aria-label="LinkedIn">IN</a>
+                <a href="#" class="social-icon magnetic" id="social-facebook" aria-label="Facebook">FB</a>
+                <a href="#" class="social-icon magnetic" id="social-instagram" aria-label="Instagram">IG</a>
             </div>
         </div>
     </footer>
